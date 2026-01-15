@@ -1,0 +1,38 @@
+body {
+    background-color: rgb(120, 99, 139);
+    font: normal 15px Arial;
+}
+
+header {
+    color: #fff;
+    text-align: center;
+}
+
+section {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    width: 500px;
+    margin: auto;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.397);
+}
+
+footer{
+    color: #fff;
+    text-align: center;
+    font-style: italic;
+}
+#txtf, #txti, #txtp {
+    display: flex;
+    justify-content: center;
+}
+
+#res {
+    background-color: aqua;
+    padding: 10px;
+    border-radius: 5px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos</title>
+    <style>
+        body {
+            background-color: rgb(213, 183, 241);
+            font: normal 15px arial;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .box {
+            background-color: aliceblue;
+            width: 400px;
+            height: 220px;
+            padding: 20px;
+            align-items: center;
+            margin: auto;
+            border-radius: 20px;
+            border: 1px solid #000;
+        }
+
+    </style>
+
+</head>
+<body>
+    <h1>Produtos</h1> 
+    <div class="box">
+        <p>
+            Digite o codigo do produto: 
+            <input type="number" id="codigo">
+        </p>
+        <p>
+            Digite a quantidade do produto:
+            <input type="number" id="quantidade"> 
+        </p>
+        <input type="button" value="Verificar" onclick="Verificar()">
+        <div id="space"></div>
+    </div>
+
+    <script>
+        function Verificar() {
+            var cod = Number(document.getElementById('codigo').value)
+            var qua = Number(document.getElementById('quantidade').value)
+            var space = document.getElementById('space')
+
+            var produto = ""
+            var preco = 0
+
+            switch (cod) {
+                case 200:
+                    produto = "Camiseta"
+                    preco = 25
+                    break
+                case 201:
+                    produto = "Calça"
+                    preco = 35
+                    break
+                case 202:
+                    produto = "Jaqueta"
+                    preco = 45
+                    break
+                case 203:
+                    produto = "Saia"
+                    preco = 55
+                    break
+                default:
+                    space.innerHTML = "[ERRO] Código de produto inválido."
+                    return
+            }
+
+            var total = preco * qua
+
+            space.innerHTML = `<p><strong>Produto:</strong> ${produto}</p>
+                <p><strong>Quantidade:</strong> ${qua}</p>
+                <p><strong>Valor total a pagar:</strong> R$ ${total.toFixed(2)}</p>`
+        }
+
+    </script>
+
+</body>
+</html>
