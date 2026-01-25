@@ -1,0 +1,9 @@
+let num = [4, 2, 7, 0, 5]
+
+num.push(1)
+num.sort()
+console.log(num)
+console.log(`Nosso vetor tem ${num.length} posições`)
+console.log(`O primeiro valor do vetor é ${num[0]}`)
+let pos = num.indexOf(6)
+console.log(`o valor 0 esta na posição ${pos}`)

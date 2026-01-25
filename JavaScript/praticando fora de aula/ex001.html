@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>valor numerico</title>
+    <style>
+        body {
+            background-color: rgb(194, 171, 216);
+            font: normal 15px arial;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .esp {
+            background-color: #fff;
+            width: 400px;
+            height: 140px;
+            border-radius: 15px;
+            margin: auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        #ver {
+            background-color: #d5c4e9;
+            border-radius: 9px;
+            margin: auto;
+            display: flex;
+            border: none;
+            width: 80px;
+            height: 40px;
+            cursor: pointer;
+        }
+
+        #res {
+            text-align: center;
+        }
+
+        #number {
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Desconto de 15%</h1>
+    <div class="esp">
+        <p>
+            Digite um valor:
+            <input type="number" id="number">
+        </p>
+        <p>
+            <input type="button" value="Verificar"  id="ver" onclick="verificar()">
+        </p>
+        <div id="res">
+
+        </div>
+    </div>
+    
+
+    <script>
+
+         function verificar() {
+            var n = document.getElementById('number')
+            var valor = Number(n.value)
+            var res = document.getElementById('res')
+            var porcentagem = 15
+
+            if (isNaN(valor) || valor <= 0) {
+                res.innerHTML = 'Digite um valor maior que 0'
+                return;
+            }
+
+            var desconto = valor * (porcentagem / 100)
+            var val = valor - desconto
+
+            res.innerHTML = `Seu valor de ${valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })} com 15% de desconto é igual a ${val.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}`
+        }
+        
+    </script>
+
+</body>
+</html>

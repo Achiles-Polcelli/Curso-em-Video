@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela</title>
+</head>
+<body>
+    
+    <h1>Tabela</h1>
+    <div class="txt">
+        <p>
+            Digite o código: 
+            <input type="number" name="cod" id="cod">
+        </p>
+        <p>
+            <input type="button" value="Verificar" onclick="Verificar()">
+        </p>
+        <div id="space">
+
+        </div>
+    </div>
+
+    <script>
+
+        function Verificar(){
+            var cod = document.getElementById('cod')
+            var c = Number(cod.value)
+            var space = document.getElementById('space')
+            if (c === 1){
+                space.innerHTML = 'Alimento não perecível'
+            } else if (c >= 2 && c <= 4) {
+                space.innerHTML = 'Alimento perecível'
+            } else if (c >= 5 && c <= 6) {
+                space.innerHTML = 'Vestuário'
+            } else if (c === 7) {
+                space.innerHTML = 'Higiene Pessoal'
+            } else if (c >= 8 && c <= 15) {
+                space.innerHTML = 'Limpeza e utensílios demésticos'
+            } else {
+                space.innerHTML = '[ERRO] Código Inválido'
+            }
+        }
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>País</title>
+</head>
+<body>
+    <h1>Verificando nacionalidade brasileira</h1>
+    Qual país você nasceu? <input type="text" name="pais" id="pais">
+    <input type="button" value="Verificar" onclick="verificar()">
+    <div id="veri">
+
+    </div>
+
+
+    <script>
+
+        function verificar() {
+            var txt = window.document.querySelector('#pais').value.trim().toLowerCase()
+            var res = window.document.querySelector('#veri')
+            
+            // Verifica se o campo está vazio
+            if(txt === '') {
+                res.innerHTML = 'Por favor, digite um país!'
+                return
+            }
+            
+            if(txt === 'brasil') {
+                res.innerHTML = `Que legal, você é do ${txt}, então vc é brasileiro que nem eu`
+            }else{
+                res.innerHTML = `Que legal, você é do ${txt}, mas você n é brasileiro :(`
+            }
+        }
+
+    </script>
+</body>
+</html>

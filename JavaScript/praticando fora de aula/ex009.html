@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operador 1</title>
+</head>
+<body>
+    <h1>Desconto de 15%</h1>
+    <div class="box">
+        <p>
+            Digite um numero:
+            <input type="number" name="txtn1" id="txtn1">
+        </p>
+        <p>
+            <input type="button" value="Verificar" onclick="verificar()">
+        </p>
+        <div id="res">
+
+        </div>
+    </div>
+
+    <script>
+        function verificar() {
+            var txtn1 = window.document.querySelector('input#txtn1')
+            var n1 = Number(txtn1.value)
+            var res = window.document.querySelector('div#res')
+            n2 = n1 * 0.15
+            res.innerHTML = `Parabéns, você ganhou ${n2.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })} de desconto!`
+        }
+    </script>
+</body>
+</html>
